@@ -8,7 +8,7 @@ This repository serves as a centralized collection of my computational biology p
 
 **1. Finding the Origin of Replication (OriC)**
 
-**Directory:** `/Finding-OriC` (or your chosen sub-folder name)
+**Directory:** `/Finding The Origin Of Replication` (or your chosen sub-folder name)
 
 A modular Python pipeline designed to locate the origin of replication (ori) in bacterial genomes (such as *Salmonella enterica*). The pipeline mimics how professional bioinformaticians combine macroscopic and microscopic search techniques.
 
