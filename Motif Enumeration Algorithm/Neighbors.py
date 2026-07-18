@@ -1,4 +1,4 @@
-import HammingDisatnce
+from HammingDistance import HammingDisatnce
 def Neighbors(pattern, d):
     """Generates all k-mers that differ from the pattern by at most d mismatches."""
     if d == 0:
