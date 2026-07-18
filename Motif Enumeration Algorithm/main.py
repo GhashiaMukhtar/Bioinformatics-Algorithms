@@ -1,4 +1,4 @@
-import MotifEnumeration
+from MotifEnumeration import MotifEnumeration
 path = input("Enter file path: ")
 with open(path) as f:
     first_line = f.readline().strip().split()
