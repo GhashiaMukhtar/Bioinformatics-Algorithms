@@ -1,4 +1,6 @@
-import Neighbors
+from Neighbors import Neighbors
+from HammingDistance import HammingDistance
+
 def MotifEnumeration(Dna, k, d):
     """
     Finds all (k, d)-motifs in a collection of strings.
