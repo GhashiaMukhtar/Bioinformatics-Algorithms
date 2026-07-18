@@ -1,5 +1,5 @@
-from 4K_DNACombination import AllStrings
-from d(Pattern,String) import DistanceBetweenPatternAndStrings
+from 4K_DNACombinations import AllStrings
+from distance import DistanceBetweenPatternAndStrings
 def MedianString(Dna, k):
     best_distance = float("inf")
     Median = ""
