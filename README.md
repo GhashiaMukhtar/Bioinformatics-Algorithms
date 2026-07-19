@@ -2,7 +2,7 @@
 
 Welcome to my Bioinformatics Algorithms repository!
 
-This repository serves as a centralized collection of my computational biology projects, scripts, and algorithms. Here, I implement mathematical and algorithmic solutions to analyze genomic data, solve motif-finding problems, and understand fundamental bioinformatics challenges.
+This repository serves as a centralized collection of my computational biology projects, scripts, and algorithms. Here, I implement mathematical and algorithmic solutions to analyze genomic data, showcase common bioinformatics problems, and provide runnable examples.
 
 ## 📚 Current Projects
 
@@ -10,11 +10,11 @@ This repository serves as a centralized collection of my computational biology p
 
 **Directory:** `/Finding The Origin Of Replication`
 
-A modular Python pipeline designed to locate the origin of replication (ori) in bacterial genomes (such as *Salmonella enterica*). The pipeline mimics how professional bioinformaticians combine macroscopic and microscopic DNA analysis techniques.
+A modular Python pipeline designed to locate the origin of replication (ori) in bacterial genomes (such as *Salmonella enterica*). The pipeline mimics how professional bioinformaticians combine macro- and micro-scale signals to identify candidate ori regions.
 
 - **calculate_skew.py**: Reads a full genome and calculates the GC Skew (G - C) to find the global minimum—the macroscopic region where the DNA halves transition.  
 - **creating_ori.py**: Safely extracts a 500-nucleotide search window centered around the minimum skew index(es) for targeted analysis.  
-- **frequent_kmer.py**: Uses a sliding-window algorithm to find the most frequent k-mers (DnaA boxes), accounting for mutations (up to d mismatches) and reverse complements to aggregate a final binding site prediction.
+- **frequent_kmer.py**: Uses a sliding-window algorithm to find the most frequent k-mers (DnaA boxes), accounting for mutations (up to d mismatches) and reverse complements to aggregate a final binding-site candidate list.
 
 **Key Features:**
 - Efficient genome parsing and string manipulation
@@ -30,7 +30,7 @@ A modular Python pipeline designed to locate the origin of replication (ori) in 
 
 **Directory:** `/Motif Enumeration Algorithm`
 
-An implementation of the Motif Enumeration Algorithm to discover conserved sequence patterns (motifs) across multiple DNA sequences. The algorithm finds all **(k, d)-motifs**—k-length sequences that appear in all input strings with at most d mismatches.
+An implementation of the Motif Enumeration Algorithm to discover conserved sequence patterns (motifs) across multiple DNA sequences. The algorithm finds all **(k, d)-motifs**—k-length sequences that appear in each input sequence with at most d mismatches.
 
 **Key Files:**
 - **MotifEnumeration.py**: Core algorithm that identifies motifs
@@ -54,7 +54,7 @@ An implementation of the Motif Enumeration Algorithm to discover conserved seque
 
 **Directory:** `/Median String Problem`
 
-A bioinformatics algorithm that solves the motif-finding problem by identifying the k-length DNA pattern that minimizes the total Hamming distance to all input sequences. This approach finds a "median" pattern that is most representative of a DNA sequence collection.
+A bioinformatics algorithm that solves the motif-finding problem by identifying the k-length DNA pattern that minimizes the total Hamming distance to all input sequences. This approach finds a "median" pattern representative of the collection.
 
 **Key Files:**
 - **MedianString.py**: Core algorithm implementation
@@ -74,6 +74,23 @@ A bioinformatics algorithm that solves the motif-finding problem by identifying 
 - m = average length of DNA strings
 
 [📖 Full Documentation](Median%20String%20Problem/README.md)
+
+---
+
+### 4. Greedy Motif Search
+
+**Directory:** `/Greedy Motif Search`
+
+A greedy heuristic for motif finding that builds motifs by iteratively selecting the profile-most-probable k-mers. The directory contains both the pseudocounts-smoothed variant (recommended for small datasets) and the raw-frequency variant (no pseudocounts).
+
+**Key Files:**
+- **GreedyMotif.py**: Contains `GreedyMotifSearchWithPseudocounts` and `GreedyMotifSearch` implementations.
+- **Profile.py**: Profile builders (`BuildProfile`, `BuildProfileWithPseudocounts`).
+- **ProbableKmer.py**: `ProfileMostProbableKmer` helper to select the most probable k-mer in a string under a profile.
+- **Score.py**: Computes motif set score (sum of Hamming distances from consensus per column).
+- **main.py**: CLI to run the greedy search using the provided dataset.
+
+[📖 Full Documentation](Greedy%20Motif%20Search/README.md)
 
 ---
 
@@ -102,6 +119,9 @@ python main.py
 
 # Example for Median String Problem:
 python main.py
+
+# Example for Greedy Motif Search:
+python "Greedy Motif Search/main.py"
 ```
 
 **Note:** Datasets (like full bacterial genomes or sequence files) may need to be downloaded or placed in the appropriate directory to run the scripts.
@@ -130,6 +150,14 @@ Bioinformatics-Algorithms/
 │   ├── distance.py
 │   ├── main.py
 │   ├── dataset_30304_9.txt
+│   └── README.md
+├── Greedy Motif Search/
+│   ├── GreedyMotif.py
+│   ├── Profile.py
+│   ├── ProbableKmer.py
+│   ├── Score.py
+│   ├── main.py
+│   ├── dataset_30306_9.txt
 │   └── README.md
 └── README.md
 ```
@@ -168,4 +196,4 @@ Feel free to reach out if you have questions about any of the algorithms or impl
 
 ---
 
-**Last Updated:** July 18, 2026
+**Last Updated:** July 19, 2026
