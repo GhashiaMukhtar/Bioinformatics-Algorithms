@@ -1,6 +1,7 @@
 from ProbableKmer import ProfileMostProbableKmer
 from Score import Score
-from Profile import BuildProfileWithPseudocounts
+from Profile import BuildProfile, BuildProfileWithPseudocounts
+
 def GreedyMotifSearchWithPseudocounts(Dna, k, t):
     BestMotifs = []
     for string in Dna:
@@ -21,7 +22,7 @@ def GreedyMotifSearchWithPseudocounts(Dna, k, t):
         current_score = Score(current_motifs)
         if current_score < best_score:
             best_score = current_score
-            BestMotifs = current_motifs
+            BestMotifs = list(current_motifs)
             
     return BestMotifs
 
@@ -49,6 +50,6 @@ def GreedyMotifSearch(Dna, k, t):
         current_score = Score(current_motifs)
         if current_score < best_score:
             best_score = current_score
-            BestMotifs = current_motifs
+            BestMotifs = list(current_motifs)
             
     return BestMotifs
