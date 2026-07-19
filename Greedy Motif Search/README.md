@@ -54,4 +54,3 @@ AATGCC...
 
 - Input validation: ensure the DNA strings are of length >= k and contain only A/C/G/T.
 - If you want deterministic or alternative tie-breaking, update `ProfileMostProbableKmer` accordingly.
-- Consider adding unit tests for `Score`, `BuildProfile`, `BuildProfileWithPseudocounts`, and `ProfileMostProbableKmer` for future maintenance.
