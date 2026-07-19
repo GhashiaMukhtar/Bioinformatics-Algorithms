@@ -9,4 +9,4 @@ with open(path) as f:
 winners = GreedyMotifSearchWithPseudocounts(Dna, k, t)
 
 for motif in winners:
-    print(" ".join(motif))
+    print(motif)
